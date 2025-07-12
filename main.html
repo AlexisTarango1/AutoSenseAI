@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IoT Device Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>IoT Monitoring Dashboard</h1>
+
+    <section class="section">
+  <h2>Device Table View</h2>
+  <button id="viewDevicesBtn">View Table</button>
+  <table id="devicesTable" border="1" style="margin-top: 10px;">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Location</th>
+    </tr>
+  </table>
+</section>
+
+    <section class="section">
+      <h2>All Devices</h2>
+      <button onclick="fetchDevices()">Refresh</button>
+      <ul id="deviceList"></ul>
+    </section>
+
+    <section class="section">
+      <h2>Add Device</h2>
+      <form id="addDeviceForm">
+        <input type="text" placeholder="Name" name="name" required />
+        <input type="text" placeholder="Type" name="type" required />
+        <input type="text" placeholder="Location" name="location" required />
+        <button type="submit">Add Device</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Get Diagnostics</h2>
+      <input type="number" id="diagId" placeholder="Device ID" />
+      <button onclick="getDiagnostics()">Run</button>
+      <pre id="diagnosticsResult"></pre>
+    </section>
+
+    <section class="section">
+      <h2>AI Diagnosis</h2>
+      <input type="number" id="aiId" placeholder="Device ID" />
+      <button onclick="getAIDiagnostics()">Run AI</button>
+      <pre id="aiResult"></pre>
+    </section>
+  </div>
+
+  <script>
+const API_URL = "http://localhost:5501";
+
+async function fetchDevices() {
+  const res = await fetch(`${API_URL}/devices`);
+  const data = await res.json();
+  const list = document.getElementById("deviceList");
+  list.innerHTML = "";
+  data.forEach(device => {
+    const li = document.createElement("li");
+    li.textContent = `#${device.id} - ${device.name} (${device.type}) @ ${device.location}`;
+    list.appendChild(li);
+  });
+}
+
+document.getElementById("addDeviceForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  const res = await fetch(`${API_URL}/devices`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  });
+
+  const msg = await res.json();
+  alert(msg.message || msg.error);
+  fetchDevices();
+  form.reset();
+});
+
+async function getDiagnostics() {
+  const id = document.getElementById("diagId").value;
+  const res = await fetch(`${API_URL}/devices/${id}/diagnostics`);
+  const data = await res.json();
+  document.getElementById("diagnosticsResult").textContent = JSON.stringify(data, null, 2);
+}
+
+async function getAIDiagnostics() {
+  const id = document.getElementById("aiId").value;
+  const res = await fetch(`${API_URL}/ai/diagnose/${id}`);
+  const data = await res.json();
+  document.getElementById("aiResult").textContent = JSON.stringify(data, null, 2);
+}
+
+document.getElementById('viewDevicesBtn').addEventListener('click', async function () {
+  const response = await fetch(`${API_URL}/devices`);
+  const devices = await response.json();
+  const table = document.getElementById('devicesTable');
+  table.innerHTML = `
+    <tr>
+      <th>ID</th><th>Name</th><th>Type</th><th>Location</th>
+    </tr>
+  `;
+  devices.forEach(d => {
+    table.innerHTML += `
+      <tr>
+        <td>${d.id}</td>
+        <td>${d.name}</td>
+        <td>${d.type}</td>
+        <td>${d.location}</td>
+      </tr>
+    `;
+  });
+});
+</script>
+
+
+
+</body>
+</html>
