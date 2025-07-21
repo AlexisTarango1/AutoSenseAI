@@ -15,7 +15,7 @@ While it's not powered by machine learning yet, the architecture is designed to 
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Flask-style backend with RESTful API endpoints
 - Full CRUD operations for managing HVAC devices
@@ -27,7 +27,7 @@ While it's not powered by machine learning yet, the architecture is designed to 
 
 ---
 
-## 🧠 Simulated AI/LLM Workflow (Planned)
+##  Simulated AI/LLM Workflow (Planned)
 
 AutoSenseAI is designed to emulate key concepts of automated support systems without using actual machine learning. Planned features include:
 
@@ -38,7 +38,7 @@ AutoSenseAI is designed to emulate key concepts of automated support systems wit
 
 ---
 
-## 📦 Tech Stack
+##  Tech Stack
 
 - **Language:** Python 3  
 - **Framework:** Flask-style architecture  
@@ -48,7 +48,7 @@ AutoSenseAI is designed to emulate key concepts of automated support systems wit
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 AutoSenseAI/
 ├── template.py # Core backend logic and routes
@@ -59,7 +59,7 @@ AutoSenseAI/
 
 ---
 
-## 🧪 Setup & Run Instructions
+##  Setup & Run Instructions
 
 Clone the repository and start the backend locally:
 
