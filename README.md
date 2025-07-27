@@ -1,6 +1,6 @@
 # AutoSenseAI – Remote IoT Sensor Monitoring & Diagnostics (WIP)
 
-## 📌 About the Project
+## About the Project
 
 AutoSenseAI began as a personal project driven by my interest in smart systems and how technology can be used to catch problems before they happen. I’ve gotten to know several building automation technicians, and one thing I kept hearing is how often they’re called out to job sites for issues that could have been fixed remotely—or even avoided entirely with better diagnostics.
 
@@ -11,11 +11,11 @@ While it's not powered by machine learning yet, the architecture is designed to 
 
 **AutoSenseAI** is a backend application designed to simulate real-time monitoring and diagnostics of HVAC sensor data in smart building environments. It models how predictive maintenance and anomaly detection workflows could operate using lightweight backend logic.
 
-> ⚠️ **Note:** This project is currently a work in progress. Core backend functionality is complete. Diagnostic logic, frontend UI, and extended features are actively being developed.
+> **Note:** This project is currently a work in progress. Diagnostic logic, frontend UI, and extended features are actively being developed.
 
 ---
 
-##  Features
+## Features
 
 - Flask-style backend with RESTful API endpoints
 - Full CRUD operations for managing HVAC devices
@@ -27,7 +27,7 @@ While it's not powered by machine learning yet, the architecture is designed to 
 
 ---
 
-##  Simulated AI/LLM Workflow (Planned)
+## Simulated AI/LLM Workflow (Planned)
 
 AutoSenseAI is designed to emulate key concepts of automated support systems without using actual machine learning. Planned features include:
 
@@ -38,7 +38,7 @@ AutoSenseAI is designed to emulate key concepts of automated support systems wit
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 - **Language:** Python 3  
 - **Framework:** Flask-style architecture  
@@ -48,7 +48,7 @@ AutoSenseAI is designed to emulate key concepts of automated support systems wit
 
 ---
 
-##  Project Structure
+## Project Structure
 
 AutoSenseAI/
 ├── template.py # Core backend logic and routes
@@ -59,7 +59,7 @@ AutoSenseAI/
 
 ---
 
-##  Setup & Run Instructions
+## Setup & Run Instructions
 
 Clone the repository and start the backend locally:
 

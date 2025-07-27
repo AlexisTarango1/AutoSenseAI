@@ -1,3 +1,5 @@
+# Backend logic (Python)
+
 from flask import send_from_directory
 from flask import Flask, request, jsonify
 import sqlite3
