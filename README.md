@@ -2,9 +2,9 @@
 
 ## About the Project
 
-AutoSenseAI began as a personal project driven by my interest in smart systems and how technology can be used to catch problems before they happen. I’ve gotten to know several building automation technicians, and one thing I kept hearing is how often they’re called out to job sites for issues that could have been fixed remotely—or even avoided entirely with better diagnostics.
+AutoSenseAI began as a personal project driven by my interest in smart systems and how technology can be used to catch problems before they happen. 
 
-That sparked the idea: what if an AI-powered backend system could simulate how these decisions are made? AutoSenseAI was built to explore that idea. It models rule-based fault detection and suggests potential fixes that could be reviewed and approved by technicians before dispatch. The goal is to save time, reduce unnecessary site visits, and move toward smarter remote diagnostics.
+The goal is for an AI-powered backend system could simulate how these decisions are made? AutoSenseAI was built to explore that idea. It models rule-based fault detection and suggests potential fixes that could be reviewed and approved by technicians before dispatch. The goal is to save time, reduce unnecessary site visits, and move toward smarter remote diagnostics.
 
 While it's not powered by machine learning yet, the architecture is designed to mimic how AI systems could learn from recurring problems, automate resolution suggestions, and ultimately improve operational efficiency. This project gave me the chance to combine backend development with a real-world problem I care about—and I hope to keep evolving it from here.
 
